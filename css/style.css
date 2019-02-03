@@ -1,3 +1,17 @@
+/*
+0 - 600px:     Phone
+600 - 1000px    Tablet portrait
+1000 - 1200px   Tablet landscape
+1200 - 1800px  Normal style
+1800+          Big desktop
+
+- phone
+- tab-port
+- tab-land
+- big desktop
+
+1em = 16px
+*/
 *,
 *::after,
 *::before {
