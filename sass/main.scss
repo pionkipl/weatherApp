@@ -1,4 +1,12 @@
 @import "abstracts/mixins";
+@import "abstracts/utilities";
 
 @import "base/base";
 @import "base/typography";
+
+@import "layout/header";
+@import "layout/main";
+
+@import "../bulma/sass/utilities/_all.sass";
+@import "../bulma/sass/elements/container.sass";
+@import "../bulma/sass/grid/columns.sass";

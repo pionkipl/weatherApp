@@ -1,0 +1,18 @@
+.main {
+  &__cart {
+    background-image: url("../img/cloud_1920.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 50vw;
+    margin: 0 auto;
+
+    &__container {
+      padding: 2rem 4rem;
+
+      &__city {
+        font-size: 5rem;
+      }
+    }
+  }
+}
