@@ -31,7 +31,13 @@ body {
   height: 100vh; }
 
 body {
-  font-family: "Permanent Marker", cursive; }
+  font-family: arial; }
+
+.box {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 1rem; }
 
 .header__search {
   display: flex;
@@ -42,7 +48,8 @@ body {
       flex-direction: column;
       align-items: center; } }
   .header__search--city {
-    font-size: 4rem; }
+    font-size: 4rem;
+    font-family: "Permanent Marker", cursive; }
     @media only screen and (max-width: 37.5em) {
       .header__search--city {
         margin-bottom: 3rem; } }
@@ -65,17 +72,86 @@ body {
       margin-left: -2.5rem;
       cursor: pointer; }
 
-.main__cart {
+.main__background {
   background-image: url("../img/cloud_1920.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 80vh;
-  width: 50vw;
-  margin: 0 auto; }
-  .main__cart__container {
-    padding: 2rem 4rem; }
-    .main__cart__container__city {
-      font-size: 5rem; }
+  height: 89vh;
+  position: relative;
+  filter: blur(4px); }
+
+.main__cart {
+  position: absolute;
+  top: 2rem;
+  display: block;
+  width: inherit;
+  padding: 0 15rem; }
+  .main__cart__top {
+    display: flex;
+    justify-content: space-around; }
+    .main__cart__top--city {
+      font-size: 8rem;
+      color: #fff;
+      text-shadow: 0 0 5px #000; }
+    .main__cart__top--temp {
+      font-size: 9rem;
+      color: #fff;
+      text-shadow: 0 0 5px #000; }
+  .main__cart__mid {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    color: white;
+    width: 35rem;
+    margin-top: 3rem; }
+    .main__cart__mid--day {
+      font-size: 5rem;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 0 5px #000; }
+    .main__cart__mid--humidity {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem; }
+      .main__cart__mid--humidity .icon-humidity {
+        background-image: url("../img/humidity.png");
+        width: 5rem;
+        height: 5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 3rem; }
+      .main__cart__mid--humidity .value-humidity {
+        color: #000;
+        text-shadow: 0 0 1px #000; }
+    .main__cart__mid--wind {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem; }
+      .main__cart__mid--wind .icon-wind {
+        background-image: url("../img/wind.png");
+        width: 5rem;
+        height: 5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 3rem; }
+      .main__cart__mid--wind .value-wind {
+        color: #000;
+        text-shadow: 0 0 1px #000; }
+    .main__cart__mid--pressure {
+      display: flex;
+      align-items: center; }
+      .main__cart__mid--pressure .icon-pressure {
+        background-image: url("../img/pressure.png");
+        width: 5rem;
+        height: 5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-right: 3rem; }
+      .main__cart__mid--pressure .value-pressure {
+        color: #000;
+        text-shadow: 0 0 1px #000; }
 
 @keyframes spinAround {
   from {

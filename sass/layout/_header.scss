@@ -11,6 +11,7 @@
 
     &--city {
       font-size: 4rem;
+      font-family: "Permanent Marker", cursive;
 
       @include breakpoints(phone) {
         margin-bottom: 3rem;
