@@ -27,131 +27,97 @@ html {
 
 body {
   box-sizing: border-box;
-  background-image: linear-gradient(to right bottom, #69bcef, #0b6ca8);
+  background: radial-gradient(#d05a94, #3b3154);
   height: 100vh; }
 
 body {
-  font-family: arial; }
+  font-family: arial;
+  color: #fff; }
 
-.box {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
-  border-radius: 1rem; }
-
-.header__search {
+.app {
   display: flex;
   justify-content: center;
-  margin-top: 3rem; }
-  @media only screen and (max-width: 37.5em) {
-    .header__search {
+  margin-top: 10rem; }
+
+.main {
+  width: 70vw;
+  height: 60vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(41, 51, 120, 0.7));
+  border-radius: 1rem; }
+  .main__weather {
+    margin: 2rem 3rem; }
+    .main__weather__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .main__weather__top--degree {
+        display: flex; }
+        .main__weather__top--degree .fahrenheit,
+        .main__weather__top--degree .celsius {
+          background-color: #e54875;
+          border-radius: 10rem;
+          font-size: 2rem;
+          width: 4rem;
+          height: 4rem;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .main__weather__top--degree .fahrenheit .degree,
+          .main__weather__top--degree .celsius .degree {
+            position: absolute;
+            top: 6px;
+            left: 5px; }
+        .main__weather__top--degree .fahrenheit {
+          margin-right: 0.5rem; }
+      .main__weather__top--city {
+        display: flex;
+        align-items: center;
+        position: relative; }
+        .main__weather__top--city-input {
+          border-radius: 100px;
+          height: 3.2rem;
+          border: none;
+          background-color: rgba(229, 72, 117, 0.6);
+          padding-left: 3.5rem;
+          font-size: 2rem;
+          width: 22rem;
+          color: #fff; }
+        .main__weather__top--city-input:focus {
+          outline: none; }
+        .main__weather__top--city-search {
+          background-color: #e53b6c;
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .main__weather__top--city-search-icon {
+            -webkit-mask-image: url("../img/find.svg");
+            mask-image: url("../img/find.svg");
+            -webkit-mask-size: cover;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            background-color: #fff;
+            width: 1.7rem;
+            height: 1.7rem;
+            position: absolute;
+            cursor: pointer; }
+    .main__weather__mid {
+      display: flex;
       flex-direction: column;
-      align-items: center; } }
-  .header__search--city {
-    font-size: 4rem;
-    font-family: "Permanent Marker", cursive; }
-    @media only screen and (max-width: 37.5em) {
-      .header__search--city {
-        margin-bottom: 3rem; } }
-  .header__search__input {
-    display: flex;
-    align-items: center;
-    margin-left: 3rem; }
-    @media only screen and (max-width: 37.5em) {
-      .header__search__input {
-        margin-left: 0; } }
-    .header__search__input--bar {
-      height: 2.5rem;
-      font-family: "Permanent Marker", cursive;
-      font-size: 2.5rem;
-      border: none; }
-    .header__search__input--bar:focus {
-      outline: none; }
-    .header__search__input--search-icon {
-      font-size: 1.6rem;
-      margin-left: -2.5rem;
-      cursor: pointer; }
-
-.main__background {
-  background-image: url("../img/cloud_1920.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 89vh;
-  position: relative;
-  filter: blur(4px); }
-
-.main__cart {
-  position: absolute;
-  top: 2rem;
-  display: block;
-  width: inherit;
-  padding: 0 15rem; }
-  .main__cart__top {
-    display: flex;
-    justify-content: space-around; }
-    .main__cart__top--city {
-      font-size: 8rem;
-      color: #fff;
-      text-shadow: 0 0 5px #000; }
-    .main__cart__top--temp {
-      font-size: 9rem;
-      color: #fff;
-      text-shadow: 0 0 5px #000; }
-  .main__cart__mid {
-    display: flex;
-    flex-direction: column;
-    font-size: 3rem;
-    color: white;
-    width: 35rem;
-    margin-top: 3rem; }
-    .main__cart__mid--day {
-      font-size: 5rem;
-      padding: 1rem;
+      align-items: flex-end;
+      margin-top: 2rem; }
+      .main__weather__mid--temp {
+        font-size: 9rem; }
+      .main__weather__mid--date {
+        font-size: 2rem; }
+    .main__weather__bottom {
       display: flex;
-      justify-content: center;
-      color: #fff;
-      text-shadow: 0 0 5px #000; }
-    .main__cart__mid--humidity {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem; }
-      .main__cart__mid--humidity .icon-humidity {
-        background-image: url("../img/humidity.png");
-        width: 5rem;
-        height: 5rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-right: 3rem; }
-      .main__cart__mid--humidity .value-humidity {
-        color: #000;
-        text-shadow: 0 0 1px #000; }
-    .main__cart__mid--wind {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem; }
-      .main__cart__mid--wind .icon-wind {
-        background-image: url("../img/wind.png");
-        width: 5rem;
-        height: 5rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-right: 3rem; }
-      .main__cart__mid--wind .value-wind {
-        color: #000;
-        text-shadow: 0 0 1px #000; }
-    .main__cart__mid--pressure {
-      display: flex;
-      align-items: center; }
-      .main__cart__mid--pressure .icon-pressure {
-        background-image: url("../img/pressure.png");
-        width: 5rem;
-        height: 5rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-right: 3rem; }
-      .main__cart__mid--pressure .value-pressure {
-        color: #000;
-        text-shadow: 0 0 1px #000; }
+      flex-direction: column; }
 
 @keyframes spinAround {
   from {

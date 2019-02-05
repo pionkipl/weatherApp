@@ -1,91 +1,116 @@
-.main {
-  &__background {
-    background-image: url("../img/cloud_1920.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 89vh;
-    position: relative;
-    filter: blur(4px);
-  }
-  &__cart {
-    position: absolute;
-    top: 2rem;
-    display: block;
-    width: inherit;
-    padding: 0 15rem;
+.app {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
 
+.main {
+  width: 70vw;
+  height: 60vh;
+  background-image: linear-gradient(
+    to right,
+    rgba(#000, 0.9),
+    rgba($dark-blue, 0.7)
+  );
+  border-radius: 1rem;
+
+  &__weather {
+    margin: 2rem 3rem;
     &__top {
       display: flex;
-      justify-content: space-around;
-      &--city {
-        font-size: 8rem;
-        @include text-color;
+      align-items: center;
+      justify-content: space-between;
+      &--degree {
+        display: flex;
+        .fahrenheit,
+        .celsius {
+          background-color: $light-pink-main;
+          border-radius: 10rem;
+          font-size: 2rem;
+          width: 4rem;
+          height: 4rem;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .degree {
+            position: absolute;
+            top: 6px;
+            left: 5px;
+          }
+        }
+        .fahrenheit {
+          margin-right: 0.5rem;
+        }
       }
-      &--temp {
-        font-size: 9rem;
-        @include text-color;
+
+      &--city {
+        display: flex;
+        align-items: center;
+        position: relative;
+        &-input {
+          border-radius: 100px;
+          height: 3.2rem;
+          border: none;
+          background-color: rgba($light-pink-main, 0.6);
+          padding-left: 3.5rem;
+          font-size: 2rem;
+          width: 22rem;
+          color: #fff;
+        }
+        &-input:focus {
+          outline: none;
+        }
+        &-search {
+          background-color: $light-pink-tertiary;
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &-icon {
+            -webkit-mask-image: url("../img/find.svg");
+            mask-image: url("../img/find.svg");
+            -webkit-mask-size: cover;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            background-color: #fff;
+            width: 1.7rem;
+            height: 1.7rem;
+            position: absolute;
+            cursor: pointer;
+          }
+        }
       }
     }
 
     &__mid {
       display: flex;
       flex-direction: column;
-      font-size: 3rem;
-      color: white;
-      width: 35rem;
-      margin-top: 3rem;
-
-      &--day {
-        font-size: 5rem;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        @include text-color;
+      align-items: flex-end;
+      margin-top: 2rem;
+      &--temp {
+        font-size: 9rem;
       }
 
-      &--humidity {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        .icon-humidity {
-          background-image: url("../img/humidity.png");
-          @include icon-first;
-        }
+      &--date {
+        font-size: 2rem;
+      }
+    }
 
-        .value-humidity {
-          color: #000;
-          text-shadow: 0 0 1px #000;
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      &__forecast {
+        &-item {
         }
       }
 
-      &--wind {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-
-        .icon-wind {
-          background-image: url("../img/wind.png");
-          @include icon-first;
-        }
-
-        .value-wind {
-          color: #000;
-          text-shadow: 0 0 1px #000;
-        }
-      }
-
-      &--pressure {
-        display: flex;
-        align-items: center;
-        .icon-pressure {
-          background-image: url("../img/pressure.png");
-          @include icon-first;
-        }
-
-        .value-pressure {
-          color: #000;
-          text-shadow: 0 0 1px #000;
-        }
+      &__details {
       }
     }
   }

@@ -1,12 +1,12 @@
 @import "abstracts/mixins";
 @import "abstracts/utilities";
+@import "abstracts/variables";
 
 @import "base/base";
 @import "base/typography";
 
 @import "components/box";
 
-@import "layout/header";
 @import "layout/main";
 
 @import "../bulma/sass/utilities/_all.sass";

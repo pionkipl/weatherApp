@@ -46,16 +46,3 @@
     }
   }
 }
-
-@mixin text-color {
-  color: #fff;
-  text-shadow: 0 0 5px #000;
-}
-
-@mixin icon-first {
-  width: 5rem;
-  height: 5rem;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 3rem;
-}

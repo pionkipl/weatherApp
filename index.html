@@ -19,45 +19,58 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="header">
-      <div class="container">
-        <div class="header__search mg-top">
-          <h1 class="header__search--city">Your city</h1>
-          <div class="header__search__input">
-            <input type="text" class="header__search__input--bar" />
-            <i class="fas fa-search header__search__input--search-icon"></i>
+    <section class="app">
+      <div class="main">
+        <div class="main__weather">
+          <div class="main__weather__top">
+            <div class="main__weather__top--degree">
+              <div class="fahrenheit"><span class="degree">&deg;</span>F</div>
+              <div class="celsius"><span class="degree">&deg;</span>C</div>
+            </div>
+            <div class="main__weather__top--city">
+              <input type="text" class="main__weather__top--city-input" />
+              <div class="main__weather__top--city-search">
+                <div class="main__weather__top--city-search-icon"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="main mg-top">
-      <div class="container">
-        <div class="main__background"></div>
-        <div class="main__cart">
-          <div class="main__cart__top">
-            <h2 class="main__cart__top--city">Warsaw</h2>
-            <div class="main__cart__top--temp box">19<span>&deg;</span>C</div>
+          <div class="main__weather__mid">
+            <div class="main__weather__mid--temp">20</div>
+            <div class="main__weather__mid--date">Monday 03 January 2019</div>
           </div>
-          <div class="main__cart__mid box">
-            <div class="main__cart__mid--day">Monday</div>
-            <div class="main__cart__mid--date">4.02.2019</div>
-            <div class="main__cart__mid--sun">
-              <div class="main__cart__mid--sun-rise"></div>
-              <div class="main__cart__mid--sun-set"></div>
+          <div class="main__weather__bottom">
+            <div class="main__weather__bottom__forecast">
+              <div class="main__weather__bottom__forecast-item">
+                <div class="main__weather__bottom__forecast-item--day-1">
+                  TUE
+                </div>
+                <div class="main__weather__bottom__forecast-item--icon-1"></div>
+                <div class="main__weather__bottom__forecast-item--temp-1">
+                  20
+                </div>
+              </div>
+              <div class="main__weather__bottom__forecast-item">
+                <div class="main__weather__bottom__forecast-item--day-2"></div>
+                <div class="main__weather__bottom__forecast-item--icon-2"></div>
+                <div class="main__weather__bottom__forecast-item--temp-2"></div>
+              </div>
+              <div class="main__weather__bottom__forecast-item">
+                <div class="main__weather__bottom__forecast-item--day-3"></div>
+                <div class="main__weather__bottom__forecast-item--icon-3"></div>
+                <div class="main__weather__bottom__forecast-item--temp-3"></div>
+              </div>
+              <div class="main__weather__bottom__forecast-item">
+                <div class="main__weather__bottom__forecast-item--day-4"></div>
+                <div class="main__weather__bottom__forecast-item--icon-4"></div>
+                <div class="main__weather__bottom__forecast-item--temp-4"></div>
+              </div>
+              <div class="main__weather__bottom__forecast-item">
+                <div class="main__weather__bottom__forecast-item--day-5"></div>
+                <div class="main__weather__bottom__forecast-item--icon-5"></div>
+                <div class="main__weather__bottom__forecast-item--temp-5"></div>
+              </div>
             </div>
-            <div class="main__cart__mid--humidity">
-              <div class="icon-humidity"></div>
-              <div class="value-humidity">60%</div>
-            </div>
-            <div class="main__cart__mid--wind">
-              <div class="icon-wind"></div>
-              <div class="value-wind">20km/h</div>
-            </div>
-            <div class="main__cart__mid--pressure">
-              <div class="icon-pressure"></div>
-              <div class="value-pressure">1000hPa</div>
-            </div>
+            <div class="main__weather__bottom__detials"></div>
           </div>
         </div>
       </div>
