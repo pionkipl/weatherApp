@@ -41,7 +41,7 @@ body {
 
 .main {
   width: 70vw;
-  height: 60vh;
+  height: 55rem;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(41, 51, 120, 0.7));
   border-radius: 1rem; }
   .main__weather {
@@ -118,6 +118,72 @@ body {
     .main__weather__bottom {
       display: flex;
       flex-direction: column; }
+      .main__weather__bottom__forecast {
+        margin-top: 14rem;
+        display: flex;
+        justify-content: space-between; }
+        .main__weather__bottom__forecast-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 12rem;
+          height: 12rem;
+          background-color: #562b3f;
+          border-radius: 50%; }
+          .main__weather__bottom__forecast-item--day-1 {
+            font-size: 2rem; }
+          .main__weather__bottom__forecast-item--icon-1 {
+            -webkit-mask-image: url("../img/sun.svg");
+            mask-image: url("../img/sun.svg");
+            -webkit-mask-size: cover;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            width: 4rem;
+            height: 4rem;
+            background-color: #fff; }
+          .main__weather__bottom__forecast-item--temp-1 {
+            font-size: 2rem; }
+        .main__weather__bottom__forecast-item:hover {
+          background-color: #e54875;
+          cursor: pointer; }
+      .main__weather__bottom__details {
+        display: flex;
+        border-radius: 100px;
+        height: 3.2rem;
+        border: none;
+        background-image: linear-gradient(to right, rgba(229, 72, 117, 0.7), #562b3f);
+        font-size: 1.5rem;
+        position: relative;
+        margin-top: 2rem; }
+        .main__weather__bottom__details--unroll {
+          background-color: #e53b6c;
+          width: 3rem;
+          height: 3rem;
+          position: absolute;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .main__weather__bottom__details--unroll-icon {
+            -webkit-mask-image: url("../img/right.svg");
+            mask-image: url("../img/right.svg");
+            -webkit-mask-size: cover;
+            -webkit-mask-repeat: no-repeat;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            background-color: #fff;
+            width: 1.8rem;
+            height: 1.8rem;
+            position: absolute;
+            cursor: pointer; }
+        .main__weather__bottom__details__right {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-evenly;
+          margin-left: -3rem; }
 
 @keyframes spinAround {
   from {
