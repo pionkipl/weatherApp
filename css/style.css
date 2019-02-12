@@ -40,7 +40,7 @@ body {
   margin-top: 10rem; }
 
 .main {
-  width: 70vw;
+  width: 75rem;
   height: 55rem;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(41, 51, 120, 0.7));
   border-radius: 1rem; }
@@ -54,7 +54,7 @@ body {
         display: flex; }
         .main__weather__top--degree .fahrenheit,
         .main__weather__top--degree .celsius {
-          background-color: #e54875;
+          background-color: #562b3f;
           border-radius: 10rem;
           font-size: 2rem;
           width: 4rem;
@@ -62,7 +62,8 @@ body {
           position: relative;
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          cursor: pointer; }
           .main__weather__top--degree .fahrenheit .degree,
           .main__weather__top--degree .celsius .degree {
             position: absolute;
@@ -70,6 +71,8 @@ body {
             left: 5px; }
         .main__weather__top--degree .fahrenheit {
           margin-right: 0.5rem; }
+        .main__weather__top--degree .active-temp {
+          background-color: #e54875; }
       .main__weather__top--city {
         display: flex;
         align-items: center;
@@ -82,6 +85,8 @@ body {
           padding-left: 3.5rem;
           font-size: 2rem;
           width: 22rem;
+          color: #fff; }
+        .main__weather__top--city-input::placeholder {
           color: #fff; }
         .main__weather__top--city-input:focus {
           outline: none; }
@@ -115,11 +120,13 @@ body {
         font-size: 9rem; }
       .main__weather__mid--date {
         font-size: 2rem; }
+      .main__weather__mid--city {
+        font-size: 8rem; }
     .main__weather__bottom {
       display: flex;
       flex-direction: column; }
       .main__weather__bottom__forecast {
-        margin-top: 14rem;
+        margin-top: 4rem;
         display: flex;
         justify-content: space-between; }
         .main__weather__bottom__forecast-item {
@@ -131,9 +138,9 @@ body {
           height: 12rem;
           background-color: #562b3f;
           border-radius: 50%; }
-          .main__weather__bottom__forecast-item--day-1 {
+          .main__weather__bottom__forecast-item--day {
             font-size: 2rem; }
-          .main__weather__bottom__forecast-item--icon-1 {
+          .main__weather__bottom__forecast-item--icon {
             -webkit-mask-image: url("../img/sun.svg");
             mask-image: url("../img/sun.svg");
             -webkit-mask-size: cover;
@@ -143,7 +150,7 @@ body {
             width: 4rem;
             height: 4rem;
             background-color: #fff; }
-          .main__weather__bottom__forecast-item--temp-1 {
+          .main__weather__bottom__forecast-item--temp {
             font-size: 2rem; }
         .main__weather__bottom__forecast-item:hover {
           background-color: #e54875;
@@ -184,6 +191,9 @@ body {
           width: 100%;
           justify-content: space-evenly;
           margin-left: -3rem; }
+
+.active {
+  background-color: #e54875; }
 
 @keyframes spinAround {
   from {

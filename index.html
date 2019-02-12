@@ -24,50 +24,59 @@
         <div class="main__weather">
           <div class="main__weather__top">
             <div class="main__weather__top--degree">
-              <div class="fahrenheit"><span class="degree">&deg;</span>F</div>
-              <div class="celsius"><span class="degree">&deg;</span>C</div>
+              <div class="main__weather__top--degree-item fahrenheit">
+                <span class="degree">&deg;</span>F
+              </div>
+              <div class="main__weather__top--degree-item celsius active-temp">
+                <span class="degree">&deg;</span>C
+              </div>
             </div>
             <div class="main__weather__top--city">
-              <input type="text" class="main__weather__top--city-input" />
+              <input
+                type="text"
+                class="main__weather__top--city-input"
+                placeholder="Type your city"
+              />
               <div class="main__weather__top--city-search">
                 <div class="main__weather__top--city-search-icon"></div>
               </div>
             </div>
           </div>
           <div class="main__weather__mid">
-            <div class="main__weather__mid--temp">20</div>
+            <div class="main__weather__mid--temp"></div>
             <div class="main__weather__mid--date">Monday 03 January 2019</div>
+            <div class="main__weather__mid--city"></div>
           </div>
           <div class="main__weather__bottom">
             <div class="main__weather__bottom__forecast">
-              <div class="main__weather__bottom__forecast-item">
-                <div class="main__weather__bottom__forecast-item--day-1">
+              <div class="main__weather__bottom__forecast-item active">
+                <div class="main__weather__bottom__forecast-item--day">
                   TUE
                 </div>
-                <div class="main__weather__bottom__forecast-item--icon-1"></div>
-                <div class="main__weather__bottom__forecast-item--temp-1">
+                <div class="main__weather__bottom__forecast-item--icon"></div>
+                <div class="main__weather__bottom__forecast-item--temp">
                   20
                 </div>
               </div>
               <div class="main__weather__bottom__forecast-item">
-                <div class="main__weather__bottom__forecast-item--day-2"></div>
-                <div class="main__weather__bottom__forecast-item--icon-2"></div>
-                <div class="main__weather__bottom__forecast-item--temp-2"></div>
+                <div class="main__weather__bottom__forecast-item--day"></div>
+                <div class="main__weather__bottom__forecast-item--icon"></div>
+                <div class="main__weather__bottom__forecast-item--temp"></div>
               </div>
               <div class="main__weather__bottom__forecast-item">
-                <div class="main__weather__bottom__forecast-item--day-3"></div>
-                <div class="main__weather__bottom__forecast-item--icon-3"></div>
-                <div class="main__weather__bottom__forecast-item--temp-3"></div>
+                <div class="main__weather__bottom__forecast-item--day"></div>
+                <div class="main__weather__bottom__forecast-item--icon"></div>
+                <div class="main__weather__bottom__forecast-item--temp"></div>
               </div>
               <div class="main__weather__bottom__forecast-item">
-                <div class="main__weather__bottom__forecast-item--day-4"></div>
-                <div class="main__weather__bottom__forecast-item--icon-4"></div>
-                <div class="main__weather__bottom__forecast-item--temp-4"></div>
+                <div class="main__weather__bottom__forecast-item--day"></div>
+                <div class="main__weather__bottom__forecast-item--icon"></div>
+                <div class="main__weather__bottom__forecast-item--temp"></div>
               </div>
               <div class="main__weather__bottom__forecast-item">
-                <div class="main__weather__bottom__forecast-item--day-5"></div>
-                <div class="main__weather__bottom__forecast-item--icon-5"></div>
-                <div class="main__weather__bottom__forecast-item--temp-5"></div>
+                <div class="main__weather__bottom__forecast-item--day"></div>
+                <div class="main__weather__bottom__forecast-item--icon"></div>
+                <div class="main__weather__bottom__forecast-item--temp"></div>
               </div>
             </div>
             <div class="main__weather__bottom__details">
@@ -84,12 +93,6 @@
                 <div class="main__weather__bottom__details__right--wind">
                   Wind:
                 </div>
-                <div class="main__weather__bottom__details__right--sunrise">
-                  Sunrise:
-                </div>
-                <div class="main__weather__bottom__details__right--sunset">
-                  Sunset:
-                </div>
               </div>
             </div>
           </div>
@@ -97,6 +100,7 @@
       </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
