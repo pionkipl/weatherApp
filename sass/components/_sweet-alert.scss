@@ -1,0 +1,30 @@
+.swal2-icon {
+  font-size: 1.4rem !important;
+  border-color: #ff88aa !important;
+  color: #ff88aa !important;
+}
+
+.swal2-title {
+  font-size: 3.2rem !important;
+}
+
+#swal2-content {
+  font-size: 2rem !important;
+}
+
+.swal2-confirm {
+  font-size: 2rem !important;
+  background-color: #e53b6c !important;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.swal-actions:focus {
+  outline: none;
+}
+
+.swal2-styled:focus {
+  box-shadow: none !important;
+}

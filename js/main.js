@@ -1,5 +1,6 @@
 "use strict";
 (function() {
+  // Variables
   const input = document.querySelector(".main__weather__top--city-input");
   const search = document.querySelector(".main__weather__top--city-search");
   const forecast = document.querySelectorAll(
@@ -36,10 +37,59 @@
 
   let weatherList = [];
 
-  search.addEventListener("click", () => {
+  // Event listeners
+
+  search.addEventListener("click", () => {});
+
+  search.addEventListener("click", searchCity);
+  input.addEventListener("keyup", function(e) {
+    let key = e.which || e.keyCode;
+    if (key === 13) {
+      searchCity();
+    }
+  });
+
+  // Fetching data
+
+  function fetchWeather(city) {
+    return fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=4d542bf9572aee4fe02b7e99b67cb728`
+    )
+      .then(function(response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          Swal.fire({
+            type: "warning",
+            title: "City not found",
+            text: "Please try again",
+            width: "40rem",
+            padding: "3em",
+            background: "#fff"
+          });
+        }
+      })
+      .then(function(myJson) {
+        let list = myJson.list;
+        list.forEach(function(el) {
+          el.dt *= 1000;
+        });
+        return list;
+      })
+      .catch(err => {
+        console.log(err);
+        return [];
+      });
+  }
+
+  // Searching city
+
+  function searchCity() {
     fetchWeather(input.value).then(list => {
       if (input.value.trim() !== "") {
-        mainCity.innerText = input.value;
+        mainCity.innerText = `${input.value
+          .charAt(0)
+          .toUpperCase()}${input.value.slice(1)}`;
         let find = findDays(list);
         weatherList = setDate(find);
         console.log(weatherList);
@@ -47,14 +97,16 @@
         changeData(weatherList);
       } else {
         Swal.fire({
-          title: "Please type city before clicking",
-          width: 600,
+          type: "warning",
+          title: "City not entered",
+          text: "Please type city before clicking",
+          width: "40rem",
           padding: "3em",
           background: "#fff"
         });
       }
     });
-  });
+  }
 
   // Show warsaw at beginning
 
@@ -72,11 +124,21 @@
     console.log(weatherList);
   });
 
+  // Class checking if it is active
+
   function check(el, data) {
     for (let i = 0; i < data.length; i++) {
       data[i].classList.remove("active");
     }
     el.classList.add("active");
+  }
+
+  function checkActive(data) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].classList.contains("active")) {
+        return i;
+      }
+    }
   }
 
   forecast.forEach(el => {
@@ -89,6 +151,8 @@
       this
     );
   });
+
+  // Temeprature and icons
 
   function checkTemp(el, deg) {
     for (let i = 0; i < deg.length; i++) {
@@ -125,6 +189,8 @@
     }
   }
 
+  // Showing short names of dates + adding new properties to data.
+
   function setDate(data) {
     let d = new Date();
     for (let i = 0; i < data.length; i++) {
@@ -151,26 +217,6 @@
     return arr;
   }
 
-  function fetchWeather(city) {
-    return fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=4d542bf9572aee4fe02b7e99b67cb728`
-    )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        let list = myJson.list;
-        list.forEach(function(el) {
-          el.dt *= 1000;
-        });
-        return list;
-      })
-      .catch(err => {
-        console.log(err);
-        return [];
-      });
-  }
-
   // Change displaying data on click
 
   function changeData(data) {
@@ -195,7 +241,8 @@
   degrees.forEach(el => {
     el.addEventListener("click", () => {
       foreCast(weatherList);
-      mainTemp.innerText = forecastTemp[0].innerText;
+      let numb = checkActive(forecast);
+      mainTemp.innerText = forecastTemp[numb].innerText;
     });
   });
 

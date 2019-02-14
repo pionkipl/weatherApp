@@ -1,3 +1,13 @@
+.helper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: fit-content;
+  background-color: yellow;
+  color: black;
+  font-size: 20px !important; }
+
 /*
 0 - 600px:     Phone
 600 - 1000px    Tablet portrait
@@ -34,16 +44,45 @@ body {
   font-family: arial;
   color: #fff; }
 
+.swal2-icon {
+  font-size: 1.4rem !important;
+  border-color: #ff88aa !important;
+  color: #ff88aa !important; }
+
+.swal2-title {
+  font-size: 3.2rem !important; }
+
+#swal2-content {
+  font-size: 2rem !important; }
+
+.swal2-confirm {
+  font-size: 2rem !important;
+  background-color: #e53b6c !important; }
+  .swal2-confirm:focus {
+    outline: none !important; }
+
+.swal-actions:focus {
+  outline: none; }
+
+.swal2-styled:focus {
+  box-shadow: none !important; }
+
 .app {
   display: flex;
   justify-content: center;
   margin-top: 10rem; }
+  @media only screen and (max-width: 47.95em) {
+    .app {
+      margin-top: 0; } }
 
 .main {
   width: 75rem;
-  height: 55rem;
+  min-height: 55rem;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(41, 51, 120, 0.7));
   border-radius: 1rem; }
+  @media only screen and (max-width: 47.95em) {
+    .main {
+      border-radius: 0; } }
   .main__weather {
     margin: 2rem 3rem; }
     .main__weather__top {
@@ -86,6 +125,9 @@ body {
           font-size: 2rem;
           width: 22rem;
           color: #fff; }
+          @media only screen and (max-width: 37.5em) {
+            .main__weather__top--city-input {
+              width: 18rem; } }
         .main__weather__top--city-input::placeholder {
           color: #fff; }
         .main__weather__top--city-input:focus {
@@ -152,9 +194,18 @@ body {
             background-color: #fff; }
           .main__weather__bottom__forecast-item--temp {
             font-size: 2rem; }
+          @media only screen and (max-width: 47.95em) {
+            .main__weather__bottom__forecast-item {
+              margin-top: 4rem;
+              margin-right: 1rem; } }
         .main__weather__bottom__forecast-item:hover {
           background-color: #e54875;
           cursor: pointer; }
+        @media only screen and (max-width: 47.95em) {
+          .main__weather__bottom__forecast {
+            margin-top: 0;
+            flex-wrap: wrap;
+            justify-content: space-around; } }
       .main__weather__bottom__details {
         display: flex;
         border-radius: 100px;
@@ -164,33 +215,28 @@ body {
         font-size: 1.5rem;
         position: relative;
         margin-top: 2rem; }
-        .main__weather__bottom__details--unroll {
-          background-color: #e53b6c;
-          width: 3rem;
-          height: 3rem;
-          position: absolute;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center; }
-          .main__weather__bottom__details--unroll-icon {
-            -webkit-mask-image: url("../img/right.svg");
-            mask-image: url("../img/right.svg");
-            -webkit-mask-size: cover;
-            -webkit-mask-repeat: no-repeat;
-            mask-size: cover;
-            mask-repeat: no-repeat;
-            background-color: #fff;
-            width: 1.8rem;
-            height: 1.8rem;
-            position: absolute;
-            cursor: pointer; }
         .main__weather__bottom__details__right {
           display: flex;
           align-items: center;
           width: 100%;
-          justify-content: space-evenly;
-          margin-left: -3rem; }
+          justify-content: space-evenly; }
+          .main__weather__bottom__details__right--pressure, .main__weather__bottom__details__right--humidity, .main__weather__bottom__details__right--wind:not(:last-of-type) {
+            margin-right: 0 1rem; }
+            @media screen and (max-width: 460px) {
+              .main__weather__bottom__details__right--pressure, .main__weather__bottom__details__right--humidity, .main__weather__bottom__details__right--wind:not(:last-of-type) {
+                margin-bottom: 1rem; } }
+          @media only screen and (max-width: 47.95em) {
+            .main__weather__bottom__details__right {
+              margin-left: 0; } }
+          @media screen and (max-width: 460px) {
+            .main__weather__bottom__details__right {
+              flex-direction: column;
+              padding: 1.4rem; } }
+        @media screen and (max-width: 460px) {
+          .main__weather__bottom__details {
+            height: auto;
+            width: fit-content;
+            margin: 2rem auto; } }
 
 .active {
   background-color: #e54875; }
